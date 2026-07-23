@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Hyderabad City Bus Dashboard</title>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<link rel="stylesheet"
+href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+
+<link rel="stylesheet"
+href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🚌 Hyderabad City Bus Dashboard</h1>
+
+<button id="themeToggle">
+🌙
+</button>
+
+</header>
+
+
+<section class="cards">
+
+<div class="card">
+<h2>Total Buses</h2>
+<h1 id="totalBus">0</h1>
+</div>
+
+<div class="card">
+<h2>City Ordinary</h2>
+<h1 id="ordinary">0</h1>
+</div>
+
+<div class="card">
+<h2>Metro Express</h2>
+<h1 id="metroExpress">0</h1>
+</div>
+
+<div class="card">
+<h2>Metro Deluxe</h2>
+<h1 id="metroDeluxe">0</h1>
+</div>
+
+</section>
+
+<section id="filters">
+
+<select id="depotFilter">
+<option value="">All Depots</option>
+</select>
+
+<select id="typeFilter">
+<option value="">All Types</option>
+</select>
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search Vehicle">
+
+</section>
+
+<div id="map"></div>
+
+<section class="graphs">
+
+<div class="chartCard">
+<canvas id="serviceChart"></canvas>
+</div>
+
+<div class="chartCard">
+<canvas id="depotChart"></canvas>
+</div>
+
+</section>
+
+<section class="tableSection">
+
+<table id="busTable">
+
+<thead>
+
+<tr>
+
+<th>Vehicle</th>
+<th>Type</th>
+<th>Depot</th>
+<th>Engine</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</section>
+
+<script src="excel.js"></script>
+<script src="map.js"></script>
+<script src="charts.js"></script>
+<script src="table.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
